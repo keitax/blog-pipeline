@@ -1,0 +1,17 @@
+applications:
+  - name: keitax-blog
+    command: tv-fe
+    host: blog
+    domain: keitaxdev.jp
+    env:
+      GOPACKAGENAME: github.com/keitax/tv-fe
+      GO_INSTALL_PACKAGE_SPEC: github.com/keitax/tv-fe/cmd/tv-fe
+      TV_SITE_TITLE: keitaxのブログ
+      TV_TEMPLATE_DIR: ./templates
+      TV_STATIC_DIR: ./static
+      TV_SITE_FOOTER: (C) Keita Mizuochi, Powered by [Textvid](https://github.com/keitax/textvid)
+      TV_LOCALE: UTC
+      TV_BASE_URL: /
+      TV_RUN_LEVEL: production
+      TV_LOCAL_GIT_REPOSITORY: /tmp/textvid-repo
+      TV_REMOTE_GIT_REPOSITORY: https://github.com/keitax/blog-posts.git
