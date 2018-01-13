@@ -1,5 +1,6 @@
 applications:
   - name: keitax-blog
+    buildpack: go_buildpack
     command: tv-fe
     host: blog
     domain: keitaxdev.jp
