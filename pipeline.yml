@@ -1,0 +1,30 @@
+jobs:
+- name: deploy
+  plan:
+  - get: tv-fe-repo
+  - get: blog-pipeline-repo
+  - put: pws
+    params:
+      manifest: blog-pipeline-repo/manifest.yml
+      path: tv-fe-repo
+
+resources:
+- name: tv-fe-repo
+  type: git
+  source:
+    uri: https://github.com/keitax/tv-fe.git
+    branch: master
+- name: blog-pipeline-repo
+  type: git
+  source:
+    uri: https://github.com/keitax/blog-pipeline.git
+    branch: master
+- name: pws
+  type: cf
+  source:
+    api: https://api.run.pivotal.io
+    username: ((username))
+    password: ((password))
+    organization: ((organization))
+    space: ((space))
+    skip_cert_check: false
