@@ -5,6 +5,7 @@ jobs:
   - get: blog-pipeline-repo
   - put: pws
     params:
+      current_app_name: keitax-blog
       manifest: blog-pipeline-repo/manifest.yml
       path: tv-fe-repo
 
