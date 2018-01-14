@@ -1,5 +1,5 @@
 jobs:
-- name: deploy
+- name: deploy-fe
   plan:
   - get: tv-fe-repo
   - get: blog-pipeline-repo
