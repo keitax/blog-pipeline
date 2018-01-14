@@ -1,0 +1,7 @@
+applications:
+  - name: keitax-blog-api
+    buildpack: go_buildpack
+    command: tv-api
+    env:
+      GOPACKAGENAME: github.com/keitax/tv-api
+      GO_INSTALL_PACKAGE_SPEC: github.com/keitax/tv-api/cmd/tv-api
