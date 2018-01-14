@@ -8,12 +8,26 @@ jobs:
       current_app_name: keitax-blog-fe
       manifest: blog-pipeline-repo/manifest-fe.yml
       path: tv-fe-repo
+- name: deploy-api
+  plan:
+  - get: tv-api-repo
+  - get: blog-pipeline-repo
+  - put: pws
+    params:
+      current_app_name: keitax-blog-api
+      manifest: blog-pipeline-repo/manifest-api.yml
+      path: tv-api-repo
 
 resources:
 - name: tv-fe-repo
   type: git
   source:
     uri: https://github.com/keitax/tv-fe.git
+    branch: master
+- name: tv-api-repo
+  type: git
+  source:
+    uri: https://github.com/keitax/tv-api.git
     branch: master
 - name: blog-pipeline-repo
   type: git
