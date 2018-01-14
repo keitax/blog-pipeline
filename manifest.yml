@@ -1,5 +1,5 @@
 applications:
-  - name: keitax-blog
+  - name: keitax-blog-fe
     buildpack: go_buildpack
     command: tv-fe
     host: blog
